@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: postgres
-          image: postgres:17.2-bookworm
+          image: focker.ir/postgres:17.2-bookworm
           env:
             - name: POSTGRES_PASSWORD
               value: "postgres"

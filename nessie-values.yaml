@@ -20,7 +20,7 @@ replicaCount: 1
 
 image:
   # -- The image repository to pull from.
-  repository: ghcr.io/projectnessie/nessie
+  repository: focker.ir/projectnessie/nessie
   # -- The image pull policy.
   pullPolicy: IfNotPresent
   # -- Overrides the image tag whose default is the chart version.

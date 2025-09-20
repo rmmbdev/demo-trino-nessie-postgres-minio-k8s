@@ -8,7 +8,7 @@ image:
   # -- Image registry, defaults to empty, which results in DockerHub usage
   # TODO change this
   registry: ""
-  repository: trinodb/trino
+  repository: focker.ir/trinodb/trino
   tag: "476"
   digest: ""
   # -- When true, only the content in `repository` is used as image reference
@@ -428,12 +428,12 @@ catalogs:
     iceberg.nessie-catalog.uri=http://nessie:19120/api/v2
     iceberg.nessie-catalog.default-warehouse-dir=s3://iceberg-bucket
     iceberg.nessie-catalog.ref=main
+    fs.native-s3.enabled=true
     s3.endpoint=http://minio:9000
     s3.path-style-access=true
     s3.aws-access-key=minioadmin
     s3.aws-secret-key=minioadmin
     s3.region=us-east-1
-    
 
 # catalogs -- Configure
 # [catalogs](https://trino.io/docs/current/installation/deployment.html#catalog-properties).
@@ -665,11 +665,11 @@ coordinator:
 
   resources:
     requests:
-      cpu: 500m
-      memory: 4Gi
+      cpu: 1
+      memory: 2Gi
     limits:
-      cpu: 500m
-      memory: 4Gi
+      cpu: 1
+      memory: 2Gi
 
 
   # coordinator.livenessProbe -- [Liveness
@@ -868,11 +868,11 @@ worker:
   # ```
   resources:
     requests:
-      cpu: 500m
-      memory: 4Gi
+      cpu: 1
+      memory: 2Gi
     limits:
-      cpu: 500m
-      memory: 4Gi
+      cpu: 1
+      memory: 2Gi
 
   # worker.livenessProbe -- [Liveness
   # probe](https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/#configure-probes)
