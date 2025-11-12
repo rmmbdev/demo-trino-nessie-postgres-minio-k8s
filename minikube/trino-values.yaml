@@ -426,7 +426,7 @@ catalogs:
     connector.name=iceberg
     iceberg.catalog.type=nessie
     iceberg.nessie-catalog.uri=http://nessie:19120/api/v2
-    iceberg.nessie-catalog.default-warehouse-dir=s3://iceberg-bucket
+    iceberg.nessie-catalog.default-warehouse-dir=s3://iceberg-bucket/
     iceberg.nessie-catalog.ref=main
     fs.native-s3.enabled=true
     s3.endpoint=http://minio:9000

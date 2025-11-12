@@ -1,0 +1,19 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: iceberg-append
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: append
+          image: docker.io/library/pyice-test:latest
+          imagePullPolicy: Never
+          env:
+            - name: NESSIE_URI
+              value: http://nessie:19120/iceberg/
+            - name: MINIO_ENDPOINT
+              value: http://minio:9000
+          # Override the script to use env vars
+          command: ["python", "/app.py"]

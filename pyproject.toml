@@ -1,0 +1,13 @@
+[project]
+name = "demo-trino-nessie-postgres-minio-k8s"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "duckdb>=1.4.1",
+    "numpy>=2.3.4",
+    "pandas>=2.3.3",
+    "pyiceberg[duckdb,s3fs,sql-postgres]>=0.10.0",
+    "pynessie>=0.67.0",
+]

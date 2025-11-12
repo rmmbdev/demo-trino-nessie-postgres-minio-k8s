@@ -23,7 +23,7 @@
 ## Apply PostgreSQL configurations
 #### postgres
 ```bash
-  kubectl apply -f postgres-nessie.yaml
+  kubectl apply -f minikube/postgres-nessie.yaml
 ```
 ```bash
   kubectl port-forward svc/postgres-nessie 5432:5432
@@ -31,7 +31,7 @@
 
 #### minio
 ```bash
-  kubectl apply -f minio.yaml
+  kubectl apply -f minikube/minio.yaml
 ```
 ```bash
   kubectl port-forward svc/minio 9001:9001
@@ -48,7 +48,7 @@
 #### nessie
 
 ```bash
-  helm upgrade --install nessie nessie/nessie --values nessie-values.yaml --timeout 10m
+  helm upgrade --install nessie nessie/nessie --values minikube/nessie-values.yaml --timeout 10m
 ```
 ```bash
   kubectl port-forward svc/nessie 19120:19120 
@@ -57,9 +57,23 @@
 #### trino
 
 ```bash
-  helm upgrade --install trino-cluster trino/trino --values trino-values.yaml --timeout 10m
+  helm upgrade --install trino-cluster trino/trino --values minikube/trino-values.yaml --timeout 10m
 ```
 
 ```bash
   kubectl port-forward svc/trino-cluster-trino-stage 8080:8080 
+```
+
+#### APP
+
+```bash
+  docker build -t pyice-test:latest .
+```
+
+```bash
+  kubectl apply -f minikube/iceberg-job.yaml
+```
+
+```bash
+  kubectl delete job iceberg-append
 ```

@@ -256,7 +256,7 @@ catalog:
         # -- Location of the warehouse. Required. Used to determine the base location of a table.
         # Scheme must be either s3 (Amazon S3), gs (Google GCS) or abfs / abfss (Azure ADLS). Storage
         # properties for each location can be defined below.
-        location: s3://iceberg-bucket/  # s3://bucket1/
+        location: s3://iceberg-bucket/new-folder  # s3://bucket1/
         # -- Iceberg config defaults specific to this warehouse. They override any defaults specified
         # above in catalog.iceberg.configDefaults.
         configDefaults:
