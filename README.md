@@ -17,6 +17,14 @@
 ## Load images into Minikube
 
 ```bash
+  docker pull ghcr.io/projectnessie/nessie:0.105.1 && docker pull postgres:17.2-bookworm && docker pull minio/minio:RELEASE.2025-01-20T14-49-07Z && docker pull trinodb/trino:476
+```
+
+```bash
+  minikube image load ghcr.io/projectnessie/nessie:0.105.1 && minikube image load postgres:17.2-bookworm && minikube image load minio/minio:RELEASE.2025-01-20T14-49-07Z && minikube image load trinodb/trino:476
+```
+
+```bash
   minikube image load focker.ir/projectnessie/nessie:0.105.1 && minikube image load focker.ir/postgres:17.2-bookworm && minikube image load focker.ir/minio/minio:RELEASE.2025-01-20T14-49-07Z && minikube image load focker.ir/trinodb/trino:476
 ```
 
